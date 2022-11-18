@@ -41,6 +41,7 @@ section {
     place-items: center;
     background-image: linear-gradient(#00000080, #00000095), url('../images/hero.jpg');
     background-size: cover;
+    background-position-x: center;
     color: white;
     scroll-snap-align: center;
 }
@@ -139,7 +140,7 @@ section {
         top: 0.5rem;
         height: 2.5em;
     }
-    
+
     #it-sec-wrapper::after {
         top: 1rem;
         right: 0;
