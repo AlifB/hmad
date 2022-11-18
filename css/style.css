@@ -30,7 +30,7 @@ h1 {
 
 section {
     width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
     margin: 0;
     padding: 0;
     flex: none;
@@ -39,6 +39,7 @@ section {
 #hero {
     display: grid;
     place-items: center;
+    position: relative;
     background-image: linear-gradient(#00000080, #00000095), url('../images/hero.jpg');
     background-size: cover;
     background-position-x: center;
@@ -163,6 +164,39 @@ section {
         100% {
             width: 270px;
         }
+    }
+}
+
+#scroll-indicator {
+    position: absolute;
+    left: calc(50% - (1.5em / 2));
+    bottom: 20%;
+    width: 1.5em;
+    opacity: 0;
+    animation-name: scrollIndicatorOpacity, scrollIndicator;
+    animation-duration: 1500ms, 1000ms;
+    animation-delay: 4800ms;
+    animation-iteration-count: 1, infinite;
+    animation-fill-mode: forwards, none;
+    animation-direction: normal, alternate;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes scrollIndicatorOpacity {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes scrollIndicator {
+    from {
+        transform: translateY(0%);
+    }
+    to {
+        transform: translateY(50%);
     }
 }
 
