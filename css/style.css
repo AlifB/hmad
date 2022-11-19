@@ -50,6 +50,7 @@ footer {
 }
 
 #hero {
+    background-color: #000000;
     background-image: linear-gradient(#00000080, #00000095), url('../images/hero.jpg');
     background-size: cover;
     background-position-x: center;
@@ -225,6 +226,7 @@ footer {
     left: 0;
     z-index: -1;
     transform: translateZ(-100px) scale(2);
+    background-color: #000000;
     background-image: url('../images/me.jpg');
     background-size: cover;
     background-position: center;
