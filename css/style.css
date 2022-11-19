@@ -12,39 +12,49 @@ h1 {
     font-size: 3.5em;
 }
 
-.container {
+main {
     display: flex;
     flex-flow: column nowrap;
-    overflow: auto;
+    overflow-x: hidden;
     flex: none;
     width: 100vw;
     height: 100vh;
     scroll-snap-type: y mandatory;
     -ms-overflow-style: none;
     scrollbar-width: none;
+    perspective: 100px;
 }
 
-.container::-webkit-scrollbar {
+main::-webkit-scrollbar {
     display: none;
 }
 
 section {
+    display: grid;
+    place-items: center;
+    position: relative;
     width: 100vw;
     min-height: 100vh;
     margin: 0;
     padding: 0;
     flex: none;
+    transform-style: preserve-3d;
+    scroll-snap-align: center;
+}
+
+footer {
+    width: 100vw;
+    height: 50vh;
+    scroll-snap-align: end;
+    z-index: 1;
 }
 
 #hero {
-    display: grid;
-    place-items: center;
-    position: relative;
     background-image: linear-gradient(#00000080, #00000095), url('../images/hero.jpg');
     background-size: cover;
     background-position-x: center;
     color: white;
-    scroll-snap-align: center;
+    z-index: 1;
 }
 
 #hero h1 {
@@ -201,11 +211,36 @@ section {
 }
 
 #about {
-    display: grid;
-    place-content: center;
-    scroll-snap-align: center;
+    margin-top: -1px;
+    background: linear-gradient(#000000, #000000c9 20%, #000000d0 80%, #000000);
 }
 
+#about::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    transform: translateZ(-100px) scale(2);
+    background-image: url('../images/me.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+@media screen and (min-width: 638px) {
+    #about::after {
+        background-position-y: 30%;
+    }
+}
+
+#socials {
+    z-index: 1;
+    margin-top: -1px;
+    background: #000000;
+}
 
 @keyframes cursorblink {
     0% {
