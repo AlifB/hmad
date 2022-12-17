@@ -146,6 +146,17 @@ footer {
     }
 }
 
+.section-content {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.section-content p {
+    line-height: 2em;
+}
+
 @media screen and (max-width: 425px) {
     #name-wrapper::after {
         right: -0.5rem;
@@ -157,6 +168,10 @@ footer {
         top: 1rem;
         right: 0;
         height: 1em;
+    }
+
+    .section-content {
+        width: 80%;
     }
 
     @keyframes writename {
